@@ -1,4 +1,4 @@
-package com.kuang.springbootSwagger.datax;
+package com.springbootSwagger.datax;
 
 import lombok.extern.slf4j.Slf4j;
 

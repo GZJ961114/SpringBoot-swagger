@@ -1,4 +1,4 @@
-package com.kuang.springbootSwagger.config;
+package com.springbootSwagger.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class SwaggerConfig {
 
+/**
     @Bean
     public Docket docket1(){
         return new Docket(DocumentationType.SWAGGER_2).groupName("group1");
@@ -33,7 +34,7 @@ public class SwaggerConfig {
     public Docket docket3(){
         return new Docket(DocumentationType.SWAGGER_2).groupName("group3");
     }
-
+*/
     @Bean
     public Docket docket(Environment environment) {
         // 设置要显示swagger的环境
@@ -47,27 +48,11 @@ public class SwaggerConfig {
                 .groupName("hello") // 配置分组
                 .enable(b) //配置是否启用Swagger，如果是false，在浏览器将无法访问
                 .select()// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
-                .apis(RequestHandlerSelectors.basePackage("com.kuang.springbootSwagger.controller"))
-                // 配置如何通过path过滤,即这里只扫描请求以/kuang开头的接口
-                .paths(PathSelectors.ant("/kuang/**"))
+                .apis(RequestHandlerSelectors.basePackage("com.springbootSwagger.controller"))
+                // 配置如何通过path过滤,即这里只扫描请求以/springbootSwagger开头的接口
+                .paths(PathSelectors.ant("/springbootSwagger/**"))
                 .build();
     }
-
-   /* @Bean
-    public Docket docket() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .enable(false) //配置是否启用Swagger，如果是false，在浏览器将无法访问
-                .select() // 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
-                any() // 任何请求都扫描
-                // none() // 任何请求都不扫描
-                // regex(final String pathRegex) // 通过正则表达式控制
-                // ant(final String antPattern) // 通过ant()控制
-                .apis(RequestHandlerSelectors.basePackage("com.kuang.springbootSwagger.controller"))
-                // 配置如何通过path过滤,即这里只扫描请求以/kuang开头的接口
-                .paths(PathSelectors.ant("/kuang/**"))
-                .build();
-    }*/
 
     //配置文档信息
     private ApiInfo apiInfo() {

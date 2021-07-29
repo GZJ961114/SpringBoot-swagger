@@ -1,8 +1,7 @@
-package com.kuang.springbootSwagger.controller;
+package com.springbootSwagger.controller;
 
-import com.kuang.springbootSwagger.pojo.User;
+import com.springbootSwagger.pojo.User;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

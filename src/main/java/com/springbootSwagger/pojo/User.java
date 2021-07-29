@@ -1,4 +1,4 @@
-package com.kuang.springbootSwagger.pojo;
+package com.springbootSwagger.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
